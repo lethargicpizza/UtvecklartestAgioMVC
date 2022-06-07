@@ -1,0 +1,23 @@
+﻿@model UtvecklartestAgioMVC.Models.Employee
+
+@{
+    ViewBag.Title = "Felaktigt personnummer";
+}
+
+<h2>Ogiltigt personnummer</h2>
+
+<h3>Du har angivit ett ogiltigt personnummer. Antagligen är det i fel format, tänk på att det ska skrivas ÅÅÅÅMMDD-NNNN</h3>
+<div>
+
+    <hr />
+
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Tillbaka" class="btn btn-default" /> |
+            @Html.ActionLink("Tillbaka", "Create")
+        </div>
+    }
+</div>

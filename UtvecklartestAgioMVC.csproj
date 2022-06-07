@@ -52,6 +52,9 @@
       <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -105,9 +108,6 @@
       <Private>True</Private>
       <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -126,6 +126,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CheckSwedishSSN\LuhnCheckDigit.cs" />
+    <Compile Include="CheckSwedishSSN\PersonalIdentityNumber.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DataAccessLayer\EmployeeContext.cs" />
@@ -135,6 +137,14 @@
     <Compile Include="Migrations\202206070844123_Init.cs" />
     <Compile Include="Migrations\202206070844123_Init.designer.cs">
       <DependentUpon>202206070844123_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206070938127_DataAnnotations.cs" />
+    <Compile Include="Migrations\202206070938127_DataAnnotations.Designer.cs">
+      <DependentUpon>202206070938127_DataAnnotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206070953320_DataAnnotations1.cs" />
+    <Compile Include="Migrations\202206070953320_DataAnnotations1.Designer.cs">
+      <DependentUpon>202206070953320_DataAnnotations1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -181,6 +191,7 @@
     <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Employees\InvalidSSN.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -201,6 +212,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202206070844123_Init.resx">
       <DependentUpon>202206070844123_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206070938127_DataAnnotations.resx">
+      <DependentUpon>202206070938127_DataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206070953320_DataAnnotations1.resx">
+      <DependentUpon>202206070953320_DataAnnotations1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

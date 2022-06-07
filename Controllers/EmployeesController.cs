@@ -51,9 +51,16 @@ namespace UtvecklartestAgioMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Employee.Add(employee);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                CheckSwedishSSN.PersonalIdentityNumber pin = new CheckSwedishSSN.PersonalIdentityNumber(employee.Personnummer);
+
+                if (pin.IsValid)
+                {
+                    db.Employee.Add(employee);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                    return Redirect("InvalidSSN");
             }
 
             return View(employee);
