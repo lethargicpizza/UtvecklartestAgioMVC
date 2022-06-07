@@ -8,7 +8,6 @@ using System.Web;
 using System.Web.Mvc;
 using UtvecklartestAgioMVC.DataAccessLayer;
 using UtvecklartestAgioMVC.Models;
-using CheckSwedishSSN;
 
 namespace UtvecklartestAgioMVC.Controllers
 {
@@ -52,7 +51,7 @@ namespace UtvecklartestAgioMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-             //   PersonalIdentityNumber pin = new PersonalIdentityNumber(employee.Personnummer);
+                PersonalIdentityNumber pin = new PersonalIdentityNumber(employee.Personnummer);
                 
                 db.Employee.Add(employee);
                 db.SaveChanges();
