@@ -1,0 +1,56 @@
+﻿@model UtvecklartestAgioMVC.Models.Employee
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Ta bort anställd</h2>
+
+<h3>Är du säker?</h3>
+<div>
+    <h4>Anställd</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Förnamn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Förnamn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Efternamn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Efternamn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Personnummer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Personnummer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anställningsnummer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anställningsnummer)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Ta bort" class="btn btn-default" /> |
+            @Html.ActionLink("Tillbaka till listan", "Index")
+        </div>
+    }
+</div>
