@@ -8,16 +8,16 @@ namespace UtvecklartestAgioMVC.Models
 {
     public class Employee
     {
-        [Required]
+        [Required(ErrorMessage = "Ett förnamn behövs")]
         public string Förnamn { get; set; }
-        
-        [Required]
+
+        [Required(ErrorMessage = "Ett efternamn behövs")]
         public string Efternamn { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Ett personnummer behövs")]
         public string Personnummer { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Ett anställningsnummer behövs")]
         public string Anställningsnummer { get; set; }
         public int Id { get; set; }
 

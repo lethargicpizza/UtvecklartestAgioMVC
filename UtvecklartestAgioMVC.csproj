@@ -136,6 +136,14 @@
     <Compile Include="Migrations\202206070844123_Init.designer.cs">
       <DependentUpon>202206070844123_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206070938127_DataAnnotations.cs" />
+    <Compile Include="Migrations\202206070938127_DataAnnotations.Designer.cs">
+      <DependentUpon>202206070938127_DataAnnotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206070953320_DataAnnotations1.cs" />
+    <Compile Include="Migrations\202206070953320_DataAnnotations1.Designer.cs">
+      <DependentUpon>202206070953320_DataAnnotations1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -201,6 +209,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202206070844123_Init.resx">
       <DependentUpon>202206070844123_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206070938127_DataAnnotations.resx">
+      <DependentUpon>202206070938127_DataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206070953320_DataAnnotations1.resx">
+      <DependentUpon>202206070953320_DataAnnotations1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
