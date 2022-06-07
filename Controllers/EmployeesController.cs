@@ -57,10 +57,13 @@ namespace UtvecklartestAgioMVC.Controllers
                 {
                     db.Employee.Add(employee);
                     db.SaveChanges();
+                    
                     return RedirectToAction("Index");
                 }
                 else
-                    return Redirect("InvalidSSN");
+                {
+                    ModelState.AddModelError("", "Ogiltigt personnummer");
+                }
             }
 
             return View(employee);
@@ -88,12 +91,22 @@ namespace UtvecklartestAgioMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Förnamn,Efternamn,Personnummer,Anställningsnummer")] Employee employee)
         {
-            if (ModelState.IsValid)
+            CheckSwedishSSN.PersonalIdentityNumber pin = new CheckSwedishSSN.PersonalIdentityNumber(employee.Personnummer);
+
+            if (pin.IsValid)
             {
-                db.Entry(employee).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Entry(employee).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
+            else
+            {
+                ModelState.AddModelError("", "Ogiltigt personnummer");
+            }
+
             return View(employee);
         }
 
